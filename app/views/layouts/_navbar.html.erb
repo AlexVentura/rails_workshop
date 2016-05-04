@@ -1,11 +1,18 @@
 
 <nav>
 	<div class="nav-wrapper">
-		<a href="#" class="brand-logo">Logo</a>
+		<%= link_to 'Rails', root_path, class: 'brand-logo' %>
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
-			<li><a href="sass.html">Sass</a></li>
-			<li><a href="badges.html">Components</a></li>
-			<li><a href="collapsible.html">JavaScript</a></li>
+			<li><a href="#">Sass</a></li>
+			<li><a href="#">Components</a></li>
+			<li><a href="#">JavaScript</a></li>
+			<% if user_signed_in? %>
+			<li><%= link_to 'Editar Perfil', edit_user_registration_path %></li>
+			<li><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete %></li>
+			<% else %>
+			<li><%= link_to 'Iniciar Sesión', new_user_session_path %></li>
+			<li><%= link_to 'Registrarse', new_user_registration_path %></li>
+			<% end %>
 		</ul>
 	</div>
 </nav>

@@ -11,3 +11,6 @@
 /log/*
 !/log/.keep
 /tmp
+
+# My own untracked files
+/.DS_Store

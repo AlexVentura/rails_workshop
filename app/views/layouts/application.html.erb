@@ -8,10 +8,21 @@
 </head>
 <body>
 	<%= render 'layouts/navbar' %>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
 
-	<%= yield %>
+	<div class="container">
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
 
+		<%= yield %>
+	</div>
+
+	<%= render 'layouts/footer' %>
+
+	<script>
+		$(document).ready(function(){
+			$('.parallax').parallax();
+			$('.slider').slider({full_width: true});
+		});
+	</script>
 </body>
 </html>
